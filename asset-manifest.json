@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/-RecipeCard/static/css/main.c3d5249d.css",
+    "main.js": "/-RecipeCard/static/js/main.ed01d107.js",
+    "index.html": "/-RecipeCard/index.html",
+    "main.c3d5249d.css.map": "/-RecipeCard/static/css/main.c3d5249d.css.map",
+    "main.ed01d107.js.map": "/-RecipeCard/static/js/main.ed01d107.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3d5249d.css",
+    "static/js/main.ed01d107.js"
+  ]
+}
