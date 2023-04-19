@@ -6,9 +6,18 @@ import './index.css';
 
 const theme = {
   colors: {
-    text: 'blue',
-    accent: 'tomato',
+    // text: 'blue',
+    // accent: 'tomato',
+    black: '#212121',
+    white: '#fff',
   },
+
+  radii: {
+    xs: '2px',
+    sm: '5px',
+    md: '10px',
+    lg: '15px',
+  }
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(
