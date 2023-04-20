@@ -43,6 +43,8 @@ export const Badge = styled.span`
                 return 'orange';
             case 'hard':
                 return 'red';
+            default:
+                throw new Error(`Unknown badge type ${p.type}`);
         }
     }};
     
