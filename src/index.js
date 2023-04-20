@@ -10,6 +10,9 @@ const theme = {
     accent: 'tomato',
     black: '#212121',
     white: '#fff',
+    green: '#0db90d',
+    red: '#ff0000',
+    orange: '#ffa500',
   },
 
   radii: {

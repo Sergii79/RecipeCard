@@ -1,6 +1,17 @@
 import PropTypes from 'prop-types'
-import { TfiAlarmClock, TfiBarChart, TfiDashboard } from "react-icons/tfi";
-import { RecipeInfo, InfoBlock, Name, BadgeList, Badge } from "./RecipeCard.styles";
+import {
+    TfiAlarmClock,
+    TfiBarChart,
+    TfiDashboard
+} from "react-icons/tfi";
+import {
+    RecipeInfo,
+    InfoBlock,
+    Name,
+    BadgeList,
+    Badge
+} from "./RecipeCard.styles";
+import { RecipeDifficulty } from 'constants';
 
 export const RecipeCard = ({ item: { image, name, time, servings, calories, difficulty } }) => {    
     return (
@@ -11,25 +22,24 @@ export const RecipeCard = ({ item: { image, name, time, servings, calories, diff
             <RecipeInfo>
                 <InfoBlock>
                     <TfiAlarmClock size={24} />
-                    <span>{time}min</span>
+                    <span>{time} min</span>
                 </InfoBlock>
                 <InfoBlock>
                     <TfiDashboard size={24} />
-                    <span>{servings}servings</span>
+                    <span>{servings} servings</span>
                 </InfoBlock>
                 <InfoBlock>
                     <TfiBarChart size={24} />
-                    <span>{calories}calories</span>
+                    <span>{calories} calories</span>
                 </InfoBlock>
             </RecipeInfo>
 
             <div>
                 <h3>Difficulty</h3>
                 <BadgeList>
-                    <Badge active={difficulty === 'easy'} type=
-                    "easy">Easy</Badge>
-                    <Badge active={difficulty === 'medium'} type="medium">Medium</Badge>
-                    <Badge active={difficulty === 'hard'}type="hard">Hard</Badge>
+                    <Badge active={difficulty === RecipeDifficulty.easy} type={RecipeDifficulty.easy}>Easy</Badge>
+                    <Badge active={difficulty === RecipeDifficulty.medium} type={RecipeDifficulty.medium}>Medium</Badge>
+                    <Badge active={difficulty === RecipeDifficulty.hard}type={RecipeDifficulty.hard}>Hard</Badge>
                     {/* ПРИКЛАД <Badge active={difficulty === 'Hard'}>Hard {difficulty === 'hard' && 'ACTIVE'}</Badge> */}
                 </BadgeList>
             </div>

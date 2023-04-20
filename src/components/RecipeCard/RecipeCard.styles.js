@@ -1,8 +1,15 @@
+import { RecipeDifficulty } from "constants";
 import styled from "styled-components";
 
 export const Name = styled.h2`
     margin-top: 10px;
     margin-bottom: 15px;
+    
+    :hover {
+        color: ${p => p.theme.colors.accent};
+    }
+
+    &.active {}
 `;
 
 export const RecipeInfo = styled.div`
@@ -17,7 +24,7 @@ export const InfoBlock = styled.p`
     font-weight: 500;
 
     svg {
-        color: tomato;
+        color: ${p => p.theme.colors.accent};
     }
 `;
 
@@ -31,25 +38,43 @@ export const Badge = styled.span`
     border: 1px solid ${props => props.theme.colors.black};
     border-radius: ${p => p.theme.radii.md};
 
-    background-color: ${p => {
-        if (!p.active) {
-            return p.theme.colors.white;
+    background-color: ${({ active, type, theme}) => {
+        if (!active) {
+            return theme.colors.white;
         }
         
-        switch (p.type) {
-            case 'easy':
-                return 'green';
-            case 'medium':
-                return 'orange';
-            case 'hard':
-                return 'red';
+        switch (type) {
+            case RecipeDifficulty.easy:
+                return theme.colors.green;
+            case RecipeDifficulty.medium:
+                return theme.colors.orange;
+            case RecipeDifficulty.hard:
+                return theme.colors.accent;
             default:
-                throw new Error(`Unknown badge type ${p.type}`);
+                throw new Error(`Unknown badge type ${type}`);
         }
     }};
-    
- 
+    color: ${p => {
+        return p.active ? p.theme.colors.white : p.theme.colors.black;
+    }}; 
 `;
+
+// background-color: ${p => {
+//         if (!p.active) {
+//             return p.theme.colors.white;
+//         }
+        
+//         switch (p.type) {
+//             case 'easy':
+//                 return p.theme.colors.green;
+//             case 'medium':
+//                 return p.theme.colors.orange;
+//             case 'hard':
+//                 return p.theme.colors.accent;
+//             default:
+//                 throw new Error(`Unknown badge type ${p.type}`);
+//         }
+//     }};
 
 // export const Badge = styled.span`
 //     padding: 8px 12px;
