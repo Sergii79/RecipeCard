@@ -9,7 +9,7 @@ export const Name = styled.h2`
         color: ${p => p.theme.colors.accent};
     }
 
-    &.active {}
+    // &.active {}
 `;
 
 export const RecipeInfo = styled.div`
