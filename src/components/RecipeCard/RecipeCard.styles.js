@@ -7,7 +7,9 @@ export const Name = styled.h2`
     
     :hover {
         color: ${p => p.theme.colors.accent};
-    }    
+    }
+
+    &.active {}
 `;
 
 export const RecipeInfo = styled.div`
