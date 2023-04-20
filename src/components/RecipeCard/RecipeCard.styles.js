@@ -31,10 +31,13 @@ export const Badge = styled.span`
     border: 1px solid ${props => props.theme.colors.black};
     border-radius: ${p => p.theme.radii.md};
 
-    background-color: ${props => {
-    console.log(props);
-    return props.theme.colors.white;
-    }}
+    background-color: ${p => {
+        return p.active ? p.theme.colors.accent : p.theme.colors.white;
+    }};
+    
+    color: ${p => {
+        return p.active ? p.theme.colors.white : p.theme.colors.black;
+    }};
 `;
 
 
