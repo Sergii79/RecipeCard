@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/recipecard/static/css/main.c3d5249d.css",
-    "main.js": "/recipecard/static/js/main.e17019a4.js",
+    "main.js": "/recipecard/static/js/main.de0fa72e.js",
     "index.html": "/recipecard/index.html",
     "main.c3d5249d.css.map": "/recipecard/static/css/main.c3d5249d.css.map",
-    "main.e17019a4.js.map": "/recipecard/static/js/main.e17019a4.js.map"
+    "main.de0fa72e.js.map": "/recipecard/static/js/main.de0fa72e.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.e17019a4.js"
+    "static/js/main.de0fa72e.js"
   ]
 }
