@@ -32,13 +32,36 @@ export const Badge = styled.span`
     border-radius: ${p => p.theme.radii.md};
 
     background-color: ${p => {
-        return p.active ? p.theme.colors.accent : p.theme.colors.white;
+        if (!p.active) {
+            return p.theme.colors.white;
+        }
+        
+        switch (p.type) {
+            case 'easy':
+                return 'green';
+            case 'medium':
+                return 'orange';
+            case 'hard':
+                return 'red';
+        }
     }};
     
-    color: ${p => {
-        return p.active ? p.theme.colors.white : p.theme.colors.black;
-    }};
+ 
 `;
+
+// export const Badge = styled.span`
+//     padding: 8px 12px;
+//     border: 1px solid ${props => props.theme.colors.black};
+//     border-radius: ${p => p.theme.radii.md};
+
+//     background-color: ${p => {
+//         return p.active ? p.theme.colors.accent : p.theme.colors.white;
+//     }};
+    
+//     color: ${p => {
+//         return p.active ? p.theme.colors.white : p.theme.colors.black;
+//     }};
+// `;
 
 
 
