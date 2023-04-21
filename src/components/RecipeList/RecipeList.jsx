@@ -2,12 +2,16 @@ import { RecipeCard } from "../RecipeCard/RecipeCard";
 import PropTypes from 'prop-types';
 import { List } from "./RecipeList.styled";
 
-export const RecipeList = ({ items }) => {
+export const RecipeList = ({ items, onDelete, onSelect }) => {
     return (
         <List>
             {items.map(item => (
                 <li key={item.id}>
-                    <RecipeCard item={item} />
+                    <RecipeCard
+                        item={item}
+                        onDelete={onDelete}
+                        onSelect={onSelect}
+                    />
                 </li>
             ))}
         </List>

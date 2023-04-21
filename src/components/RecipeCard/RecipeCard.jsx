@@ -2,8 +2,12 @@ import PropTypes from 'prop-types'
 import {
     TfiAlarmClock,
     TfiBarChart,
-    TfiDashboard
+    TfiDashboard    
 } from "react-icons/tfi";
+import {
+    MdDeleteForever,
+    MdZoomIn
+} from "react-icons/md";
 import {
     RecipeInfo,
     InfoBlock,
@@ -13,7 +17,7 @@ import {
 } from "./RecipeCard.styles";
 import { RecipeDifficulty } from 'constants';
 
-export const RecipeCard = ({ item: { image, name, time, servings, calories, difficulty } }) => {    
+export const RecipeCard = ({ item: { id, image, name, time, servings, calories, difficulty }, onDelete, onSelect }) => {    
     return (
         <div>
             <img src={image} alt={name} width="240" />
@@ -42,6 +46,14 @@ export const RecipeCard = ({ item: { image, name, time, servings, calories, diff
                     <Badge active={difficulty === RecipeDifficulty.hard}type={RecipeDifficulty.hard}>Hard</Badge>
                     {/* ПРИКЛАД <Badge active={difficulty === 'Hard'}>Hard {difficulty === 'hard' && 'ACTIVE'}</Badge> */}
                 </BadgeList>
+            </div>
+            <div>
+                <button aria-label='Delete' onClick={() => onDelete(id)}>
+                    <MdDeleteForever size={20} />
+                </button>
+                <button aria-label='Zoom' onClick={() => onSelect(image)}>
+                    <MdZoomIn size={20} />
+                </button>
             </div>
         </div>);
 };
