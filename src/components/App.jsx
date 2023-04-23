@@ -7,8 +7,7 @@ import { Layout } from "./Layout/Layout";
 
 export class App extends Component {
   state = {
-    recipes: initialRecipes,
-    selectedImg: null,
+    recipes: initialRecipes,    
   };
 
   deleteRecipe = recipeId => {
@@ -17,28 +16,20 @@ export class App extends Component {
       recipes: prevState.recipes.filter(recipe => recipe.id !== recipeId),
     }))
   };
-
-  setSelectedImage = imgUrl => {
-    console.log(imgUrl);
-    this.setState({
-      selectedImg: imgUrl,
-    })
-  };
-
+ 
   render() {
     return (
     <Layout>
         <RecipeList
           items={this.state.recipes}
-          onDelete={this.deleteRecipe}
-          onSelect={this.setSelectedImage}
+          onDelete={this.deleteRecipe}          
         />
-      {this.state.selectedImg && (
+      {/* {this.state.selectedImg && (
         <div>
           Image modal
           <p>{this.state.selectedImg}</p>
         </div>          
-      )} 
+      )}  */}
       <GlobalStyle />
     </Layout>
   );

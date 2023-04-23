@@ -17,23 +17,32 @@ import {
 } from "./RecipeCard.styles";
 import { RecipeDifficulty } from 'constants';
 
-import Modal from 'react-modal';
+import { Component } from 'react';
 
-// const customStyles = {
-//   content: {
-//     top: '50%',
-//     left: '50%',
-//     right: 'auto',
-//     bottom: 'auto',
-//     marginRight: '-50%',
-//     transform: 'translate(-50%, -50%)',
-//   },
-// };
+import { ImageModal } from "../ImageModal/ImageModal";
 
-Modal.setAppElement('#root');
+export class RecipeCard extends Component {
+    state = {
+        selectedImg: null
+    }
 
-export const RecipeCard = ({ item: { id, image, name, time, servings, calories, difficulty }, onDelete, onSelect }) => {    
-    return (
+    setSelectedImage = () => {
+        console.log(this.props.item.image);
+        this.setState({
+            selectedImg: this.props.item.image,
+        })
+    };
+
+    closeModal = () => {
+        this.setState({
+            selectedImg: null,
+        })
+    };
+
+    render() {
+        const { selectedImg } = this.state
+        const { item: { id, image, name, time, servings, calories, difficulty }, onDelete } = this.props;
+        return (
         <div>
             <img src={image} alt={name} width="240" />
             <Name>{name}</Name>
@@ -66,15 +75,17 @@ export const RecipeCard = ({ item: { id, image, name, time, servings, calories, 
                 <button aria-label='Delete' onClick={() => onDelete(id)}>
                     <MdDeleteForever size={20} />
                 </button>
-                <button aria-label='Zoom' onClick={() => onSelect(image)}>
+                <button aria-label='Zoom' onClick={this.setSelectedImage}>
                     <MdZoomIn size={20} />
                 </button>
-            </div>
-
-           
-
+            </div>  
+                <ImageModal
+                    isOpen={selectedImg !== null}
+                    onClose={this.closeModal}
+                    image={selectedImg} />    
         </div>);
-};
+    }
+} 
  
 RecipeCard.propTypes = {
     item: PropTypes.shape({
