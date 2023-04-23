@@ -1,6 +1,16 @@
 import { RecipeDifficulty } from "constants";
 import styled from "styled-components";
 
+export const Container = styled.section`
+  position: relative;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+`;
+
 export const Name = styled.h2`
     margin-top: 10px;
     margin-bottom: 15px;
@@ -10,6 +20,20 @@ export const Name = styled.h2`
     }
 
     &.active {}
+`;
+
+export const Image = styled.img`
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+`;
+
+export const Meta = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  flex-grow: 1;
 `;
 
 export const RecipeInfo = styled.div`
@@ -57,6 +81,14 @@ export const Badge = styled.span`
     color: ${p => {
         return p.active ? p.theme.colors.white : p.theme.colors.black;
     }}; 
+`;
+
+export const Actions = styled.div`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
 `;
 
 // background-color: ${p => {
