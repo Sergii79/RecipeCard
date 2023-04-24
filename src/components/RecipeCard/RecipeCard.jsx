@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types'
+
 import {
     TfiAlarmClock,
     TfiBarChart,
     TfiDashboard    
 } from "react-icons/tfi";
+
 import {
     MdDeleteForever,
     MdZoomIn
 } from "react-icons/md";
+
 import {
     Container,
     RecipeInfo,
@@ -20,6 +23,7 @@ import {
     Actions
 
 } from "./RecipeCard.styles";
+
 import { RecipeDifficulty } from 'constants';
 
 import { Component } from 'react';

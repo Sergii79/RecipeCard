@@ -13,6 +13,7 @@ const theme = {
     green: '#0db90d',
     red: '#ff0000',
     orange: '#ffa500',
+    error: "red",
   },
 
   radii: {

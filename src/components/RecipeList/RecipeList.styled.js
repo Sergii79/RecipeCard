@@ -6,3 +6,7 @@ export const List = styled.ul`
     gap: 10px;
     // background-color: ${props => props.theme.colors.accent};
 `;
+
+export const ListItem = styled.li`
+  width: 320px;
+`;
