@@ -33,14 +33,14 @@ export class App extends Component {
           items={this.state.recipes}
           onDelete={this.deleteRecipe}          
         />
-      {/* {this.state.selectedImg && (
-        <div>
-          Image modal
-          <p>{this.state.selectedImg}</p>
-        </div>          
-      )}  */}
-      <GlobalStyle />
-    </Layout>
+        {/* {this.state.selectedImg && (
+          <div>
+            Image modal
+            <p>{this.state.selectedImg}</p>
+          </div>          
+        )}  */}
+       <GlobalStyle />
+      </Layout>
   );
   }
 };
