@@ -61,6 +61,7 @@ export const Badge = styled.span`
     padding: 8px 12px;
     border: 1px solid ${props => props.theme.colors.black};
     border-radius: ${p => p.theme.radii.md};
+    font-weight: 500;    
 
     background-color: ${({ active, type, theme}) => {
         if (!active) {
@@ -84,11 +85,15 @@ export const Badge = styled.span`
 `;
 
 export const Actions = styled.div`
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: flex;
-  gap: 4px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 4px;
+
+    :hover {
+        color: ${p => p.theme.colors.accent};
+    }
 `;
 
 // background-color: ${p => {

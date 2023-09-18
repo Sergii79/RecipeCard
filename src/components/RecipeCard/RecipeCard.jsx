@@ -20,9 +20,10 @@ import {
     Name,
     BadgeList,
     Badge,
-    Actions
-
+    Actions,
 } from "./RecipeCard.styles";
+
+import { AllButton } from "constants.styled";
 
 import { RecipeDifficulty } from 'constants';
 
@@ -82,12 +83,12 @@ export class RecipeCard extends Component {
                     </BadgeList>
                 </div>
                 <Actions>
-                    <button aria-label='Delete' onClick={() => onDelete(id)}>
+                    <AllButton aria-label='Delete' onClick={() => onDelete(id)}>
                         <MdDeleteForever size={20} />
-                    </button>
-                    <button aria-label='Zoom' onClick={this.setSelectedImage}>
+                    </AllButton>
+                    <AllButton aria-label='Zoom' onClick={this.setSelectedImage}>
                         <MdZoomIn size={20} />
-                    </button>
+                    </AllButton>
                 </Actions>  
                     <ImageModal
                         isOpen={selectedImg !== null}

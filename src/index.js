@@ -14,6 +14,7 @@ const theme = {
     red: '#ff0000',
     orange: '#ffa500',
     error: "red",
+    grey: "#aa9f9f"
   },
 
   radii: {
@@ -21,7 +22,12 @@ const theme = {
     sm: '5px',
     md: '10px',
     lg: '15px',
-  }
+  },
+
+  sizeIcon: {
+    sm: '20px',
+    md: '24px',
+  },
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(
