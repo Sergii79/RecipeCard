@@ -1,5 +1,5 @@
-import { RecipeDifficulty } from "constants";
-import styled from "styled-components";
+import { RecipeDifficulty } from 'constants';
+import styled from 'styled-components';
 
 export const Container = styled.section`
   position: relative;
@@ -12,14 +12,15 @@ export const Container = styled.section`
 `;
 
 export const Name = styled.h2`
-    margin-top: 10px;
-    margin-bottom: 15px;
-    
-    :hover {
-        color: ${p => p.theme.colors.accent};
-    }
+  margin-top: 10px;
+  margin-bottom: 15px;
 
-    &.active {}
+  :hover {
+    color: ${p => p.theme.colors.accent};
+  }
+
+  &.active {
+  }
 `;
 
 export const Image = styled.img`
@@ -37,70 +38,70 @@ export const Meta = styled.div`
 `;
 
 export const RecipeInfo = styled.div`
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 `;
 
 export const InfoBlock = styled.p`
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    font-weight: 500;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-weight: 500;
 
-    svg {
-        color: ${p => p.theme.colors.accent};
-    }
+  svg {
+    color: ${p => p.theme.colors.accent};
+  }
 `;
 
 export const BadgeList = styled.div`
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 `;
 
 export const Badge = styled.span`
-    padding: 8px 12px;
-    border: 1px solid ${props => props.theme.colors.black};
-    border-radius: ${p => p.theme.radii.md};
-    font-weight: 500;    
+  padding: 8px 12px;
+  border: 1px solid ${props => props.theme.colors.black};
+  border-radius: ${p => p.theme.radii.md};
+  font-weight: 500;
 
-    background-color: ${({ active, type, theme}) => {
-        if (!active) {
-            return theme.colors.white;
-        }
-        
-        switch (type) {
-            case RecipeDifficulty.easy:
-                return theme.colors.green;
-            case RecipeDifficulty.medium:
-                return theme.colors.orange;
-            case RecipeDifficulty.hard:
-                return theme.colors.accent;
-            default:
-                throw new Error(`Unknown badge type ${type}`);
-        }
-    }};
-    color: ${p => {
-        return p.active ? p.theme.colors.white : p.theme.colors.black;
-    }}; 
+  background-color: ${({ active, type, theme }) => {
+    if (!active) {
+      return theme.colors.white;
+    }
+
+    switch (type) {
+      case RecipeDifficulty.easy:
+        return theme.colors.green;
+      case RecipeDifficulty.medium:
+        return theme.colors.orange;
+      case RecipeDifficulty.hard:
+        return theme.colors.accent;
+      default:
+        throw new Error(`Unknown badge type ${type}`);
+    }
+  }};
+  color: ${p => {
+    return p.active ? p.theme.colors.white : p.theme.colors.black;
+  }};
 `;
 
 export const Actions = styled.div`
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    display: flex;
-    gap: 4px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
 
-    :hover {
-        color: ${p => p.theme.colors.accent};
-    }
+  :hover {
+    color: ${p => p.theme.colors.accent};
+  }
 `;
 
 // background-color: ${p => {
 //         if (!p.active) {
 //             return p.theme.colors.white;
 //         }
-        
+
 //         switch (p.type) {
 //             case 'easy':
 //                 return p.theme.colors.green;
@@ -121,13 +122,10 @@ export const Actions = styled.div`
 //     background-color: ${p => {
 //         return p.active ? p.theme.colors.accent : p.theme.colors.white;
 //     }};
-    
+
 //     color: ${p => {
 //         return p.active ? p.theme.colors.white : p.theme.colors.black;
 //     }};
 // `;
-
-
-
 
 // styled(MyComponent)``;
